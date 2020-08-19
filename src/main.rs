@@ -1,13 +1,13 @@
 extern crate autopilot;
 
-use autopilot::key::{type_string, toggle, Character};
+use autopilot::key::{KeyCodeConvertible, toggle, Character};
 use structopt::StructOpt;
 
-#[derive(StructOpt, Debug)]
+#[derive(StructOpt)]
 enum Cli {
     // down?
-    Down { code: u32 },
-    Up { code: u32 }
+    Down { code: KeyCodeConvertible },
+    Up { code: KeyCodeConvertible }
     //#[structopt(long, parse(try_from_str = parse_bool))]
     //down: bool,
     //code: u32
